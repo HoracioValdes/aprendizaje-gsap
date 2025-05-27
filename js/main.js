@@ -3,7 +3,7 @@ gsap.fromTo(".box", {
   x: 200,
 });*/
 
-/* apren 2 */
+/* apren 2
 let tl = gsap.timeline();
   gsap.set(".outline, code", { autoAlpha: 0 });
 gsap.set(".code-to", {
@@ -75,4 +75,18 @@ form.addEventListener("change", function () {
           }
         );
   }
+});
+*/
+
+/* 3 apren
+gsap.to(".box", { 
+  duration: 2,
+  x: 200,
+  rotation: 360,
+});+/
+
+/* 4 apren */
+gsap.to(".box", { 
+  duration: 2,
+  backgroundColor: '#8d3dae',
 });
