@@ -13,10 +13,14 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <!-- Plugins: sólo los que vayas a practicar, por ejemplo -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
-    <!-- 1, 3, 4 aprend -->
-    <div class="box green"></div>
+    <!-- Your first animation -->
+    
+    <!-- 1, 3, 4, 7 aprend
+    <div class="box green"></div> -->
 
     <!-- 2 apren
      <main>
@@ -77,6 +81,201 @@
         </code>
       </div>
     </main>-->
+
+    <!-- 5 apren 
+    <svg id="svg" viewBox="0 0 100 100">
+      <rect class="svgBox" fill="#28a92b" x="0" y="35" width="30" height="30" rx="2" />
+    </svg> -->
+
+    <!-- 6 apren
+    <canvas id="canvas" width="300" height="300"></canvas> -->
+
+    <!-- 8 apren
+    <div class="box green"></div>
+    <div class="box purple"></div> -->
+
+    <!-- Easing -->
+
+    <!-- 9 apren
+    <div class="box green">linear</div>
+    <div class="box purple">bounce</div> -->
+
+    <!-- Staggers -->
+
+    <!-- 10 apren
+    <div class="section">
+      <div class="box green"></div>
+      <div class="box purple"></div>
+      <div class="box orange"></div>
+      <div class="box purple"></div>
+      <div class="box green"></div>
+    </div>
+    <h3>Click a box to transition out</h3> -->
+
+    <!-- 11 apren
+    <link href='//fonts.googleapis.com/css?family=Signika+Negative:300,400,600' rel='stylesheet' type='text/css'>
+    <div id="container"></div>
+    <div id="instructions">
+      <div id="controls">
+        <div class="control">
+          <div class="control-label">from:</div>
+          <div class="control-vertical">
+            <label for="center"><input type="radio" id="center" name="from" value="center" checked> <code>"center"</code></label>
+            <label for="end"><input type="radio" id="end" name="from" value="end"> <code>"end"</code></label>
+            <label for="edges"><input type="radio" id="edges" name="from" value="edges"> <code>"edges"</code></label>
+            <label for="random"><input type="radio" id="random" name="from" value="random"> <code>"random"</code></label>
+            <label for="index"><input type="radio" id="index" name="from" value="11"> <code id="fromIndex">11 (index)</code></label>
+          </div>
+        </div>
+        
+        <div class="control">
+          <div class="control-label">axis:</div>
+          <div class="control-vertical">
+            <label for="null"><input type="radio" id="null" name="axis" value="null" checked> <code>null</code> (both)</label>
+            <label for="x"><input type="radio" id="x" name="axis" value="x"> <code>"x"</code></label>
+            <label for="y"><input type="radio" id="y" name="axis" value="y"> <code>"y"</code></label>
+          </div>
+        </div>
+        
+        <div class="control">
+          <div class="control-label">ease:</div>
+          <div class="control-vertical">
+            <label for="linear"><input type="radio" id="linear" name="ease" value='"none"' checked> <code>"none"</code></label>
+            <label for='"easeInOut"'><input type="radio" id="easeInOut" name="ease" value='"power3.inOut"'> <code>"power3.inOut"</code></label>
+            <label for="easeOut"><input type="radio" id="easeOut" name="ease" value='"power2.in"'> <code>"power2.in"</code></label>
+          </div>
+        </div>
+        
+      </div>
+      <p>Play with the options above to see how it affects the animation and the code below. Click any box to have the stagger emanate outward from that specific index number, using the <code class="featured">from:[index]</code> syntax.</p>
+      <div class="code">
+        <code>gsap.to(".box", {</code><br>
+        <code>&nbsp;&nbsp;duration: 1,</code><br>
+        <code>&nbsp;&nbsp;scale: 0.1,</code><br>
+        <code>&nbsp;&nbsp;y: 40,</code><br>
+        <code>&nbsp;&nbsp;ease: "power1.inOut",</code><br>
+        <code class="featured">&nbsp;&nbsp;stagger: {</code><br>
+        <code class="featured">&nbsp;&nbsp;&nbsp;&nbsp;grid: [7,15],</code><br>
+        <code class="featured">&nbsp;&nbsp;&nbsp;&nbsp;from: <span id="from">"center"</span>,<br></code>
+        <code id="axisCode" class="featured" style="display:none;">&nbsp;&nbsp;&nbsp;&nbsp;axis: <span id="axis">null</span>,<br></code>
+        <code id="easeCode" class="featured" style="display:none;">&nbsp;&nbsp;&nbsp;&nbsp;ease: <span id="ease">Linear.easeNone</span>,<br></code>
+        <code class="featured">&nbsp;&nbsp;&nbsp;&nbsp;amount: 1.5</code><br>
+        <code class="featured">&nbsp;&nbsp;}</code><br>
+        <code>});</code>
+      </div>-->
+
+    <!-- Timelines -->
+
+    <!-- 12 apren
+    <div class="box green">no delay</div>
+    <div class="box purple">delay: 1</div>
+    <div class="box orange">delay: 2</div> -->
+
+    <!-- 13 apren
+    <div class="demoBody">
+    <div id="sequence" class="timelineDemo">
+
+
+        <div class="box green" data-color="#0ae448" id="green"></div>
+        <div class="box purple" data-color="#9d95ff" id="purple"></div>
+        <div class="box orange" data-color="#ff8709" id="orange"></div>
+
+
+        <div class="timelineUI">
+          <div class="timelineUI-time" id="sequenceTime">0</div>
+          <div class="timelineUI-dragger-track">
+            <div class="timelineUI-dragger">
+              <div></div>
+            </div>
+          </div>
+          <div class="markers">
+          </div>
+
+          <div class="timleineUI-row">
+            <div class="timelineUI-tween green"></div>
+          </div>
+          <div class="timleineUI-row">
+            <div class="timelineUI-tween purple"></div>
+          </div>
+          <div class="timleineUI-row">
+            <div class="timelineUI-tween orange"></div>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="timelineUI-button play">play</button>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- 14 apren
+    <div class="demoBody">
+    <div id="sequence" class="timelineDemo">
+
+
+        <div class="box green" data-color="#0ae448" id="green"></div>
+        <div class="box purple" data-color="#9d95ff" id="purple"></div>
+        <div class="box orange" data-color="#ff8709" id="orange"></div>
+
+
+        <div class="timelineUI">
+          <div class="timelineUI-time" id="sequenceTime">0</div>
+          <div class="timelineUI-dragger-track">
+            <div class="timelineUI-dragger">
+              <div></div>
+            </div>
+          </div>
+          <div class="markers">
+          </div>
+
+          <div class="timleineUI-row">
+            <div class="timelineUI-tween green"></div>
+          </div>
+          <div class="timleineUI-row">
+            <div class="timelineUI-tween purple"></div>
+          </div>
+          <div class="timleineUI-row">
+            <div class="timelineUI-tween orange"></div>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="timelineUI-button play">play</button>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- 15 apren -->
+    <div class="demoBody">
+    <div id="sequence" class="timelineDemo">
+
+        <div class="box green" data-color="#0ae448" id="green"></div>
+        <div class="box purple" data-color="#9d95ff" id="purple"></div>
+        <div class="box orange" data-color="#ff8709" id="orange"></div>
+
+        <div class="timelineUI">
+          <div class="timelineUI-time" id="sequenceTime">0</div>
+          <div class="timelineUI-dragger-track">
+            <div class="timelineUI-dragger">
+              <div></div>
+            </div>
+          </div>
+          <div class="markers">
+          </div>
+
+          <div class="timleineUI-row">
+            <div class="timelineUI-tween green"></div>
+          </div>
+          <div class="timleineUI-row">
+            <div class="timelineUI-tween purple"></div>
+          </div>
+          <div class="timleineUI-row">
+            <div class="timelineUI-tween orange"></div>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="timelineUI-button play">play</button>
+        </div>
+      </div>
+    </div>
 
     <!-- tu código JS: aquí importarás y probarás tus animaciones -->
     <script src="js/gsap.min.js"></script>
